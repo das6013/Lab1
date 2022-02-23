@@ -56,5 +56,19 @@ int stack<T>::Size()
 {
     return size;
 }
+template <class T>
+const T stack<T>::Pop()
+{if (back==nullptr)
+    {
+        cout<<"kek";
+    }
+    const T value=back->_value;
+    Node *last =back;
+    back=back->prev;
+    delete last;
+    size--;
+    return value;
+
+}
 
 #endif // STACK_H
