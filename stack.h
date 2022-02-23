@@ -1,7 +1,6 @@
 #ifndef STACK_H
 #define STACK_H
 #include<iostream>
-#include <functional>
 using namespace std;
 
 template <class T>
@@ -20,7 +19,7 @@ public:
     ~stack();//Деструктор
     void Push(const T &value);//Добавления элемента
     const T Pop();//извлечения значения из стека
-    void Iter(function<void(const T &value)>f) const;//Проход по стеку
+    void Iter() ;//Проход по стеку
     int Size();//Размер
     void Clear();//очистка
 
@@ -70,5 +69,17 @@ const T stack<T>::Pop()
     return value;
 
 }
+template <class T>
+void stack<T>::Iter()
+{
+    Node *it=back;
+    while (it!=nullptr)
+    {
+        cout<<(it->_value)<<" ";
+        it=it->prev;
+
+
+    }
+};
 
 #endif // STACK_H
