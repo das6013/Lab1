@@ -10,8 +10,8 @@ class stack
 {
     struct Node//список
     {
-        const T value;//Значения переменной
-        Node *prev=nullptr;// указатель на прошлое звено
+        T _value;//Значения переменной
+        Node *prev;// указатель на прошлое звено
 
     };
     Node *back=nullptr;//последний элемент
@@ -28,7 +28,7 @@ public:
 template <class T>
 void stack<T>::Push(const T &value)
 {
-   Node *node=new Node(value,back);
+  Node *node=new Node{value,back};
    if (node==nullptr)
    {
        cout<<"kek"<<endl;
