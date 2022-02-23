@@ -23,5 +23,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    EStackEmpthy.h \
     EStackExcept.h \
     stack.h
