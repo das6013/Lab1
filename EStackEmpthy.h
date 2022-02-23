@@ -13,7 +13,5 @@ public:
 
     }
 
-
-
 };
 #endif // ESTACKEMPTHY_H

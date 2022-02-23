@@ -11,6 +11,9 @@ int main(int argc, char *argv[])
     kek.Pop();
     cout<<endl;
     kek.Iter();
+    stack<char> lol;
+    lol.Pop();
+
 
     return a.exec();
 }

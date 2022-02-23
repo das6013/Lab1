@@ -1,6 +1,7 @@
 #ifndef STACK_H
 #define STACK_H
 #include<iostream>
+#include"EStackEmpthy.h"
 using namespace std;
 
 template <class T>
@@ -30,7 +31,7 @@ void stack<T>::Push(const T &value)
   Node *node=new Node{value,back};
    if (node==nullptr)
    {
-       cout<<"kek"<<endl;
+       throw EStackExcept("Not enough memory.");
    }
    back=node;
    size++;
@@ -59,7 +60,7 @@ template <class T>
 const T stack<T>::Pop()
 {if (back==nullptr)
     {
-        cout<<"kek";
+        throw EStackEmpty();
     }
     const T value=back->_value;
     Node *last =back;
