@@ -26,3 +26,6 @@ HEADERS += \
     EStackEmpthy.h \
     EStackExcept.h \
     stack.h
+
+DISTFILES += \
+    Отчет.txt
