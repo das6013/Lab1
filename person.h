@@ -6,16 +6,19 @@ using namespace std;
 class Person
 {
 private:
-    long key;
-    string last_name;
-    string first_name;
+    string surname;
+    string name;
+    string patronymic;
 public:
         Person();
         Person(const Person&);
-        const string& getLastName() const { return last_name; }
-        const string& getFirstName() const { return first_name; }
-        void setLastName(const std::string&);
-        void setFirstame(const std::string&);
+        void setSurname(string _surname);
+        void setName(string _name) ;
+        void setPatronymic(string _patronymic);
+        const string& getSurname() const { return surname; }
+        const string& getName() const { return name; }
+        const string& getPatronymic() const { return surname; }
+
 };
 
 #endif // PERSON_H
