@@ -5,19 +5,21 @@ using namespace std;
 
 class Person
 {
-private:
-    string surname;
-    string name;
-    string patronymic;
 public:
-        Person();
-        Person(const Person&);
-        void setSurname(string _surname);
-        void setName(string _name) ;
-        void setPatronymic(string _patronymic);
-        const string& getSurname() const { return surname; }
-        const string& getName() const { return name; }
-        const string& getPatronymic() const { return surname; }
+    std::string surname;
+    std::string name;
+    std::string patronymic;
+public:
+    Person();
+    Person(string FIO);
+    Person(const Person&);
+    void setSurname(std::string _surname);
+    void setName(std::string _name);
+    void setPatronymic(std::string _patronymic);
+    const std::string& getSurname() const { return surname; }
+    const std::string& getName() const { return name; }
+    const std::string& getPatronymic() const { return surname; }
+    void PrintPersonData();
 
 };
 
