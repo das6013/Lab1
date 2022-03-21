@@ -16,7 +16,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        person.cpp
+        person.cpp \
+        personkeeper.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -27,6 +28,7 @@ HEADERS += \
     EStackEmpthy.h \
     EStackExcept.h \
     person.h \
+    personkeeper.h \
     stack.h
 
 DISTFILES += \
