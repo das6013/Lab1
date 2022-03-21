@@ -3,7 +3,7 @@
 #include<iostream>
 #include"EStackEmpthy.h"
 using namespace std;
-
+#include <functional>
 template <class T>
 
 class stack
@@ -20,7 +20,7 @@ public:
     ~stack();//Деструктор
     void Push(const T &value);//Добавления элемента
     const T Pop();//извлечения значения из стека
-    void Iter() ;//Проход по стеку
+    void Iter(std::function<void(const T &value)> f) const ;//Проход по стеку
     int Size();//Размер
     void Clear();//очистка
 
@@ -71,13 +71,14 @@ const T stack<T>::Pop()
 
 }
 template <class T>
-void stack<T>::Iter()
+void stack<T>::Iter(std::function<void(const T &value)> f) const
 {
     Node *it=back;
     while (it!=nullptr)
     {
-        cout<<(it->_value)<<" ";
-        it=it->prev;
+        f(it->value_);
+
+        it = it->prev_;
 
 
     }
