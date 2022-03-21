@@ -5,21 +5,22 @@ Person::Person()
     surname = "nope";
     patronymic = "nope";
 }
-Person::Person(string FIO)
+Person::Person(QString FIO)
 {
-    string dil = " ";
-    size_t pos = 0;
-    string token;
-    int k = 0;
-    while ((pos = FIO.find(dil)) != std::string::npos) {
-        token = FIO.substr(0, pos);
+    QStringList words = FIO.split(QRegularExpression("\\s+"), Qt::SkipEmptyParts); // разбиваем полученную строку на не пустые слова
 
-        if (k == 0) surname = token;
-        if (k == 1) name = token;
-        FIO.erase(0, pos + dil.length());
-        k++;
-    }
-    patronymic = FIO;
+        if (words.size() != 2 && words.size() != 3) // если в строке недостаточно, или слишком много слов, то это значит что входные данные в неверном формате
+        {
+            throw "Error: Person(): A string has incorrect format and could not be completely parsed."; // сответствтвенно об этом нужно предупредить пользователя
+        }
+
+        surname = words[0]; // используем первое слово в строке в качестве фамилии
+        name = words[1]; // второе в качестве имени
+
+        if (words.size() == 3) // если есть 3-е слово, используем его в качестве отчества
+        {
+            patronymic = words[2];
+        }
 }
 Person::Person(const Person& person)
 {
@@ -28,19 +29,15 @@ Person::Person(const Person& person)
     name = person.patronymic;
 }
 
-void Person::PrintPersonData()
-{
-    cout << surname << " " << name << " " << patronymic << endl;
-}
-void Person::setName(string newName)
+void Person::setName(QString newName)
 {
     name = newName;
 }
-void Person::setSurname(string newSurname)
+void Person::setSurname(QString newSurname)
 {
     surname = newSurname;
 }
-void Person::setPatronymic(string newPatronymic)
+void Person::setPatronymic(QString newPatronymic)
 {
     patronymic = newPatronymic;
 }

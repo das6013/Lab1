@@ -1,25 +1,26 @@
 #ifndef PERSON_H
 #define PERSON_H
 #include<iostream>
+#include <QString>
+#include <QRegularExpression>
 using namespace std;
 
 class Person
 {
 public:
-    std::string surname;
-    std::string name;
-    std::string patronymic;
+    QString surname;
+    QString name;
+    QString patronymic;
 public:
     Person();
-    Person(string FIO);
+    Person(QString FIO);
     Person(const Person&);
-    void setSurname(std::string _surname);
-    void setName(std::string _name);
-    void setPatronymic(std::string _patronymic);
-    const std::string& getSurname() const { return surname; }
-    const std::string& getName() const { return name; }
-    const std::string& getPatronymic() const { return surname; }
-    void PrintPersonData();
+    void setSurname(QString _surname);
+    void setName(QString _name);
+    void setPatronymic(QString _patronymic);
+    const QString& getSurname() const { return surname; }
+    const QString& getName() const { return name; }
+    const QString& getPatronymic() const { return surname; }
 
 };
 
