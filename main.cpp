@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     //kek.Iter();//show stack
     //stack<char> lol;
     //lol.Pop();//check except
-    Person kek;
+    Person kek();
 
 
 
