@@ -29,7 +29,7 @@ template <class T>
 void stack<T>::Push(const T &value)
 {
   Node *node=new Node{value,back};
-   if (node==nullptr)
+   if (node==nullptr)//поимка пустоты созданого элемента
    {
        throw EStackExcept("Not enough memory.");
    }
@@ -39,7 +39,7 @@ void stack<T>::Push(const T &value)
 template <class T>
 void stack<T>::Clear()
 {
-    while (back!=nullptr)
+    while (back!=nullptr)//очистка стека по шагам
     {
         Node *last=back;//Последний элемент
         back=back->prev;
@@ -60,7 +60,7 @@ template <class T>
 const T stack<T>::Pop()
 {if (back==nullptr)
     {
-        throw EStackEmpty();
+        throw EStackEmpty();//ловля исключений
     }
     const T value=back->_value;
     Node *last =back;
@@ -76,9 +76,9 @@ void stack<T>::Iter(std::function<void(const T &value)> f) const
     Node *it=back;
     while (it!=nullptr)
     {
-        f(it->value_);
+        f(it->_value); // вызов функции обратной связи
 
-        it = it->prev_;
+        it = it->prev;
 
 
     }

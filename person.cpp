@@ -1,5 +1,5 @@
 #include "person.h"
-Person::Person()
+Person::Person()//конструктор
 {
     name = "nope";
     surname = "nope";
@@ -7,17 +7,17 @@ Person::Person()
 }
 Person::Person(QString FIO)
 {
-    QStringList words = FIO.split(QRegularExpression("\\s+"), Qt::SkipEmptyParts); // разбиваем полученную строку на не пустые слова
+    QStringList words = FIO.split(QRegularExpression("\\s+"), Qt::SkipEmptyParts); // сплитим слово
 
-        if (words.size() != 2 && words.size() != 3) // если в строке недостаточно, или слишком много слов, то это значит что входные данные в неверном формате
+        if (words.size() != 2 && words.size() != 3) // проверка на наличия формата ввода
         {
-            throw "Error: Person(): A string has incorrect format and could not be completely parsed."; // сответствтвенно об этом нужно предупредить пользователя
+            throw "Error: Person(): A string has incorrect format and could not be completely parsed.";
         }
 
-        surname = words[0]; // используем первое слово в строке в качестве фамилии
-        name = words[1]; // второе в качестве имени
+        surname = words[0];
+        name = words[1];
 
-        if (words.size() == 3) // если есть 3-е слово, используем его в качестве отчества
+        if (words.size() == 3)
         {
             patronymic = words[2];
         }

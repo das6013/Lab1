@@ -7,11 +7,12 @@ PersonKeeper::PersonKeeper()
 
 PersonKeeper::~PersonKeeper()
 {
+    //отсутвеут ,потому что нет динамически созданных объектов
 }
 
 PersonKeeper &PersonKeeper::Instance()
 {
-    static PersonKeeper instance;
+    static PersonKeeper instance;//Инициализуруем объект через статик,чтоб повторно не создовать его при вызове
 
     return instance;
 }
@@ -31,13 +32,13 @@ void PersonKeeper::readPersons(QString path)
 {
     QFile file(path);
 
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))//проверка открытия
     {
         throw "Error: readPersons(): Couldn't open a file!";
     }
 
-    QTextStream stream(&file);
-    QString line;
+    QTextStream stream(&file);//данные с файла
+    QString line;//строка для считывания данных
 
     while (stream.readLineInto(&line))
     {
@@ -47,12 +48,11 @@ void PersonKeeper::readPersons(QString path)
     file.close();
 }
 
-// функция записи информации из хранителя в файл
 void PersonKeeper::writePersons(QString path) const
 {
     QFile file(path);
 
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))//проверка открытия
     {
         throw "Error: writePersons(): Couldn't open a file!";
     }

@@ -12,8 +12,8 @@ public:
     QString name;
     QString patronymic;
 public:
-    Person();
-    Person(QString FIO);
+    Person();//конструктор по умолчанию
+    Person(QString FIO);//Конструтор одной строки
     Person(const Person&);
     void setSurname(QString _surname);
     void setName(QString _name);
