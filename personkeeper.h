@@ -13,7 +13,7 @@ private:
     ~PersonKeeper();
 
     PersonKeeper &operator=(const PersonKeeper &);
-    stack<Person> stack_;
+    stack<Person> _stack;
 public:
     static PersonKeeper &Instance();
 

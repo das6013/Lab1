@@ -21,12 +21,12 @@ PersonKeeper &PersonKeeper::Instance()
 
 int PersonKeeper::Size()
 {
-    return stack_.Size();
+    return _stack.Size();
 }
 
 void PersonKeeper::Clear()
 {
-    return stack_.Clear();
+    return _stack.Clear();
 }
 void PersonKeeper::readPersons(QString path)
 {
@@ -42,7 +42,7 @@ void PersonKeeper::readPersons(QString path)
 
     while (stream.readLineInto(&line))
     {
-        stack_.Push(Person(line));
+        _stack.Push(Person(line));
     }
 
     file.close();
@@ -59,7 +59,7 @@ void PersonKeeper::writePersons(QString path) const
 
     QTextStream stream(&file);
 
-    stack_.Iter([&](const Person &value)
+    _stack.Iter([&](const Person &value)
     {
         stream << value.getSurname() << '\t' << value.getName() << '\t' << value.getPatronymic() << Qt::endl;
     });
