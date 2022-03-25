@@ -1,4 +1,5 @@
 #include "person.h"
+
 Person::Person()//конструктор
 {
     name = "nope";
@@ -15,7 +16,9 @@ Person::Person(QString FIO)
         }
 
         surname = words[0];
+
         name = words[1];
+
 
         if (words.size() == 3)
         {

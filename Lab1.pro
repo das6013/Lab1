@@ -32,4 +32,4 @@ HEADERS += \
     stack.h
 
 DISTFILES += \
-    Отчет.txt
+    test.txt

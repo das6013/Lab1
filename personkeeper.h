@@ -14,7 +14,9 @@ private:
 
     PersonKeeper &operator=(const PersonKeeper &);
     stack<Person> _stack;
+
 public:
+
     static PersonKeeper &Instance();
 
     void readPersons(QString path);

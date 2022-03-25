@@ -20,7 +20,7 @@ public:
     void setPatronymic(QString _patronymic);
     const QString& getSurname() const { return surname; }
     const QString& getName() const { return name; }
-    const QString& getPatronymic() const { return surname; }
+    const QString& getPatronymic() const { return patronymic; }
 
 };
 

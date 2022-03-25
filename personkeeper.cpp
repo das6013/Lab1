@@ -42,7 +42,11 @@ void PersonKeeper::readPersons(QString path)
 
     while (stream.readLineInto(&line))
     {
-        _stack.Push(Person(line));
+        Person kek(line);
+
+        _stack.Push(kek);
+
+
     }
 
     file.close();
@@ -59,9 +63,10 @@ void PersonKeeper::writePersons(QString path) const
 
     QTextStream stream(&file);
 
-    _stack.Iter([&](const Person &value)
+    _stack.Iter([&]( const Person &value)
     {
         stream << value.getSurname() << '\t' << value.getName() << '\t' << value.getPatronymic() << Qt::endl;
+
     });
 
     file.close();
