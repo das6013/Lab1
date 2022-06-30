@@ -25,22 +25,22 @@ Person::Person(QString FIO)
             patronymic = words[2];
         }
 }
-Person::Person(const Person& person)
+Person::Person(const Person& person)//consructor defult
 {
     name = person.name;
     name = person.surname;
     name = person.patronymic;
 }
 
-void Person::setName(QString newName)
+void Person::setName(QString newName)//set name
 {
     name = newName;
 }
-void Person::setSurname(QString newSurname)
+void Person::setSurname(QString newSurname)//set Sername
 {
     surname = newSurname;
 }
-void Person::setPatronymic(QString newPatronymic)
+void Person::setPatronymic(QString newPatronymic)//set Patronomyc
 {
     patronymic = newPatronymic;
 }
