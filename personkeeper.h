@@ -8,24 +8,22 @@
 class PersonKeeper
 {
 private:
+    //consructors
     PersonKeeper();
     PersonKeeper(const PersonKeeper &);
     ~PersonKeeper();
-
+    //overdrive operator = 
     PersonKeeper &operator=(const PersonKeeper &);
     stack<Person> _stack;
 
 public:
 
-    static PersonKeeper &Instance();
-
-    void readPersons(QString path);
-    void writePersons(QString path) const;
-
+    static PersonKeeper &Instance();//instanse
+    void readPersons(QString path);//read file 
+    void writePersons(QString path) const;// write file
     QStringList ToQStringList() const; //
-
-    int Size();
-    void Clear();
+    int Size();// size
+    void Clear();// clear data
 };
 
 #endif // PERSONKEEPER_H
