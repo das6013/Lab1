@@ -19,12 +19,12 @@ PersonKeeper &PersonKeeper::Instance()
 
 
 
-int PersonKeeper::Size()
+int PersonKeeper::Size()// retutn size
 {
     return _stack.Size();
 }
 
-void PersonKeeper::Clear()
+void PersonKeeper::Clear()// claer stack
 {
     return _stack.Clear();
 }
