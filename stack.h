@@ -20,7 +20,7 @@ public:
     ~stack();//Деструктор
     void Push(const T &value);//Добавления элемента
     const T Pop();//извлечения значения из стека
-    void Iter(std::function<void(const T &value)> f) const ;//Проход по стеку
+    void Iter(std::function<void(const T &value)> f) const ;//Проход по стеку лямбда фнкции
     int Size();//Размер
     void Clear();//очистка
 
