@@ -76,7 +76,7 @@ const T stack<T>::Pop()
 
 }
 template <class T>
-void stack<T>::Iter(std::function<void(const T &value)> f) const
+void stack<T>::Iter(std::function<void(const T &value)> f) const//лямбдав функция дя прохода по стеку
 {
     Node *it = back; // перебор всех элементов, начиная с последнего
 
